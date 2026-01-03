@@ -37,7 +37,6 @@
             background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.03) 1px, transparent 0);
             background-size: 30px 30px;
         }
-        /* フェードインアニメーション */
         .fade-in {
             animation: fadeIn 0.4s ease forwards;
         }
@@ -49,7 +48,6 @@
 </head>
 <body class="bg-pattern">
 
-    <!-- Navigation -->
     <header class="border-b border-white/10 sticky top-0 bg-black/90 backdrop-blur-md z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="text-xl font-serif font-bold gold-gradient tracking-widest hover:opacity-80 transition-opacity">役満コレクション</a>
@@ -67,7 +65,6 @@
 
     <main class="container mx-auto px-4 py-12">
         
-        <!-- Role Header -->
         <section class="mb-16">
             <div class="flex flex-col md:flex-row items-center md:items-end gap-6 mb-8">
                 <h2 class="text-5xl md:text-7xl font-serif text-white tracking-tighter">国士無双</h2>
@@ -80,21 +77,19 @@
             </p>
         </section>
 
-        <!-- Filters (JSで制御) -->
         <div class="flex space-x-8 border-b border-white/10 mb-10 text-sm font-medium">
             <button onclick="filterMode('all', this)" class="filter-btn pb-4 tab-active text-gray-500 hover:text-white transition-all">すべての和了</button>
             <button onclick="filterMode('4p', this)" class="filter-btn pb-4 text-gray-500 hover:text-white transition-all">四人麻雀</button>
             <button onclick="filterMode('3p', this)" class="filter-btn pb-4 text-gray-500 hover:text-white transition-all">三人麻雀</button>
         </div>
 
-        <!-- Gallery Grid -->
         <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
 
             <div class="image-card group cursor-pointer rounded-lg overflow-hidden fade-in" data-mode="3p">
                 <div class="aspect-video bg-zinc-800 relative flex items-center justify-center">
                     <img 
-                        src="image/suuankou/IMG_7453.jpeg" 
+                        src="image/sak/IMG_7453.jpeg" 
                         alt="和了画像" 
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     >
@@ -112,7 +107,7 @@
             <div class="image-card group cursor-pointer rounded-lg overflow-hidden fade-in" data-mode="3p">
                 <div class="aspect-video bg-zinc-800 relative flex items-center justify-center">
                     <img 
-                        src="image/suuankou/IMG_7473.jpeg" 
+                        src="image/sak/IMG_7473.jpeg" 
                         alt="和了画像" 
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     >
@@ -133,23 +128,18 @@
 
     <script>
         function filterMode(mode, btnElement) {
-            // 1. ボタンのアクティブ状態の切り替え
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('tab-active');
             });
             btnElement.classList.add('tab-active');
 
-            // 2. カードのフィルタリング
             const cards = document.querySelectorAll('.image-card');
             cards.forEach(card => {
-                // 一旦隠す
                 card.style.display = 'none';
                 card.classList.remove('fade-in');
 
-                // モード判定
                 if (mode === 'all' || card.getAttribute('data-mode') === mode) {
                     card.style.display = 'block';
-                    // 再表示時にアニメーションを適用するために微遅延
                     setTimeout(() => {
                         card.classList.add('fade-in');
                     }, 10);
