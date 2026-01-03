@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小四喜×字一色 - 役満コレクション</title>
+    <title>小四喜 × 字一色 - 役満コレクション</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -11,6 +11,7 @@
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #0f0f0f;
             color: #e0e0e0;
+            scroll-behavior: smooth;
         }
         .font-serif {
             font-family: 'Noto Serif JP', serif;
@@ -26,19 +27,24 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .image-card:hover {
-            border-color: #d4af37;
+            border-color: #8c0000;
             transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(140, 0, 0, 0.3);
         }
         .tab-active {
-            border-bottom: 2px solid #d4af37;
-            color: #d4af37;
+            border-bottom: 2px solid #8c0000;
+            color: #ffffff !important;
         }
         .bg-pattern {
-            background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.03) 1px, transparent 0);
+            background-image: radial-gradient(circle at 2px 2px, rgba(140, 0, 0, 0.03) 1px, transparent 0);
             background-size: 30px 30px;
         }
-        .multiple-badge {
-            background: linear-gradient(90deg, #8c0000, #c5a059);
+        .fade-in {
+            animation: fadeIn 0.4s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -46,107 +52,104 @@
 
     <!-- Navigation -->
     <header class="border-b border-white/10 sticky top-0 bg-black/90 backdrop-blur-md z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="index.html" class="text-xl font-serif font-bold gold-gradient tracking-widest hover:opacity-80 transition-opacity">役満コレクション</a>
-        
-        <nav class="flex space-x-6 items-center text-sm">
-            <a href="./index.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                <span>図鑑に戻る</span>
-            </a>
-        </nav>
-    </div>
-</header>
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-serif font-bold gold-gradient tracking-widest hover:opacity-80 transition-opacity">役満コレクション</a>
+            <nav class="flex space-x-6 items-center text-sm">
+                <a href="index.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    図鑑に戻る
+                </a>
+            </nav>
+        </div>
+    </header>
 
     <main class="container mx-auto px-4 py-12">
         
         <!-- Role Header -->
         <section class="mb-16">
-            <div class="flex flex-col md:flex-row items-center md:items-end gap-4 mb-8">
-                <h2 class="text-4xl md:text-6xl font-serif text-white tracking-tighter">
-                    小四喜 <span class="text-2xl md:text-4xl gold-gradient mx-2">×</span> 字一色
-                </h2>
-                <div class="pb-2">
-                    <span class="px-3 py-1 multiple-badge text-white text-[10px] font-bold rounded uppercase tracking-[0.2em] shadow-lg">Double Yakuman</span>
+            <div class="flex flex-col md:flex-row items-center md:items-end gap-6 mb-8">
+                <div class="flex flex-col">
+                    <span class="text-red-800 text-xs font-bold tracking-[0.3em] uppercase mb-2">Double Yakuman</span>
+                    <h2 class="text-4xl md:text-6xl font-serif text-white tracking-tighter">
+                        小四喜 <span class="text-2xl text-zinc-600 mx-2">×</span> 字一色
+                    </h2>
                 </div>
             </div>
-            <div class="max-w-3xl">
-                <p class="text-gray-400 leading-relaxed text-sm md:text-base border-l-2 border-yellow-700/30 pl-6 italic">
-                    風牌の三種を刻子、一種を雀頭にする「小四喜」と、全ての牌を字牌のみで構成する「字一色」が重なり合った至高の和了。
-                    字一色を狙う過程で風牌が重なることが多いため、複合の相性は良いが、その希少性と美しさは他の追随を許さない。
+            <div class="max-w-3xl border-l-2 border-red-900/50 pl-6">
+                <p class="text-gray-400 leading-relaxed text-sm md:text-base italic">
+                    風牌の三つを刻子、一つを雀頭に据える「小四喜」と、すべての牌を字牌のみで構成する「字一色」が重なり合った、息を呑むような複合役満。
+                    河には字牌が一切並ばず、卓上が風と文字のみに支配されるその様は、まさに戦場における嵐の静寂。
                 </p>
             </div>
         </section>
 
-        <!-- Filters -->
+        <!-- Filters (JS制御) -->
         <div class="flex space-x-8 border-b border-white/10 mb-10 text-sm font-medium">
-            <button class="pb-4 tab-active">すべての和了</button>
-            <button class="pb-4 text-gray-500 hover:text-gray-300 transition-colors">四人麻雀</button>
-            <button class="pb-4 text-gray-500 hover:text-gray-300 transition-colors">三人麻雀</button>
+            <button onclick="filterMode('all', this)" class="filter-btn pb-4 tab-active text-gray-500 hover:text-white transition-all">すべての和了</button>
+            <button onclick="filterMode('4p', this)" class="filter-btn pb-4 text-gray-500 hover:text-white transition-all">四人麻雀</button>
+            <button onclick="filterMode('3p', this)" class="filter-btn pb-4 text-gray-500 hover:text-white transition-all">三人麻雀</button>
         </div>
 
         <!-- Gallery Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
             
-            <!-- Gallery Item 1 -->
-            <div class="image-card group cursor-pointer rounded-lg overflow-hidden">
-                <div class="aspect-video bg-zinc-800 relative overflow-hidden flex items-center justify-center">
-                    <span class="text-zinc-600 text-[10px] uppercase tracking-[0.2em]">[和了画像：小四喜字一色]</span>
+            <!-- Item 1 (4P) -->
+            <div class="image-card group cursor-pointer rounded-lg overflow-hidden fade-in" data-mode="4p">
+                <div class="aspect-video bg-zinc-800 relative flex items-center justify-center border-b border-white/5">
+                    <span class="text-zinc-600 text-[10px] uppercase tracking-[0.2em]">[和了画像：4人]</span>
                 </div>
                 <div class="p-5">
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-[11px] font-bold text-yellow-500/80 tracking-widest uppercase">玉の間 三人南</span>
-                        <span class="text-[10px] text-gray-500 font-mono">2024.03.12</span>
+                        <span class="text-[11px] font-bold text-red-500/80 tracking-widest uppercase">玉の間 四人南</span>
+                        <span class="text-[10px] text-gray-500 font-mono">2024.03.01</span>
                     </div>
-                    <div class="flex items-center gap-2 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <span class="text-xs italic tracking-wider">段位戦</span>
-                    </div>
+                    <span class="text-xs text-gray-400 italic tracking-wider">段位戦：南4局</span>
                 </div>
             </div>
 
-            <!-- Gallery Item 2 -->
-            <div class="image-card group cursor-pointer rounded-lg overflow-hidden border-red-900/20">
-                <div class="aspect-video bg-zinc-800 relative overflow-hidden flex items-center justify-center">
-                    <span class="text-zinc-600 text-[10px] uppercase tracking-[0.2em]">[和了画像：小四喜字一色]</span>
+            <!-- Item 2 (3P) -->
+            <div class="image-card group cursor-pointer rounded-lg overflow-hidden fade-in" data-mode="3p">
+                <div class="aspect-video bg-zinc-800 relative flex items-center justify-center border-b border-white/5">
+                    <span class="text-zinc-600 text-[10px] uppercase tracking-[0.2em]">[和了画像：3人]</span>
                 </div>
                 <div class="p-5">
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-[11px] font-bold text-yellow-500/80 tracking-widest uppercase">王座の間 四人南</span>
-                        <span class="text-[10px] text-gray-500 font-mono">2023.11.05</span>
+                        <span class="text-[11px] font-bold text-red-500/80 tracking-widest uppercase">金の間 三人南</span>
+                        <span class="text-[10px] text-gray-500 font-mono">2023.12.15</span>
                     </div>
-                    <div class="flex items-center gap-2 text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <span class="text-xs italic tracking-wider">段位戦</span>
-                    </div>
+                    <span class="text-xs text-gray-400 italic tracking-wider">友人戦：東2局</span>
                 </div>
             </div>
 
-            <!-- 追記可能 -->
+            <div id="no-data" class="hidden col-span-full py-20 text-center text-zinc-600 italic">
+                該当する条件の記録がまだありません
+            </div>
         </div>
 
-        <!-- Related Higher Yakuman -->
+        <!-- Components Link Section -->
         <section class="mt-24 pt-12 border-t border-white/10">
-            <h3 class="text-sm font-serif text-gray-500 mb-8 tracking-[0.3em] uppercase text-center">上位の複合役満</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <a href="#" class="image-card p-8 text-center rounded-lg group">
-                    <div class="text-[9px] text-red-500 mb-2 font-bold uppercase tracking-widest">Triple Yakuman</div>
-                    <div class="text-xl font-serif text-white group-hover:text-yellow-500 transition-colors">
-                        大四喜 <span class="text-sm text-gray-500">×</span> 字一色
+            <h3 class="text-sm font-serif text-gray-500 mb-8 tracking-widest uppercase text-center font-bold">この役の構成要素</h3>
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- Link to Shousuushi -->
+                <a href="shousuushi.html" class="flex-1 max-w-xs image-card p-8 rounded-lg group text-center border-white/10">
+                    <div class="text-[9px] text-gray-600 mb-2 font-bold uppercase tracking-widest">Single Yakuman</div>
+                    <div class="text-xl font-serif text-white group-hover:text-yellow-500 transition-colors">小四喜</div>
+                    <div class="mt-4 flex justify-center opacity-30 group-hover:opacity-100 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
                     </div>
                 </a>
-                <a href="#" class="image-card p-8 text-center rounded-lg group">
-                    <div class="text-[9px] text-red-500 mb-2 font-bold uppercase tracking-widest">Triple Yakuman</div>
-                    <div class="text-xl font-serif text-white group-hover:text-yellow-500 transition-colors">
-                        小四喜 <span class="text-sm text-gray-500">×</span> 字一色 <span class="text-sm text-gray-500">×</span> 大三元
+                <!-- Link to Tsuiisou -->
+                <a href="tsuiisou.html" class="flex-1 max-w-xs image-card p-8 rounded-lg group text-center border-white/10">
+                    <div class="text-[9px] text-gray-600 mb-2 font-bold uppercase tracking-widest">Single Yakuman</div>
+                    <div class="text-xl font-serif text-white group-hover:text-yellow-500 transition-colors">字一色</div>
+                    <div class="mt-4 flex justify-center opacity-30 group-hover:opacity-100 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
                     </div>
                 </a>
             </div>
@@ -154,11 +157,45 @@
 
     </main>
 
-    <!-- Footer -->
+    <script>
+        function filterMode(mode, btnElement) {
+            // 1. ボタンのアクティブ状態の切り替え
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+            });
+            btnElement.classList.add('tab-active');
+
+            // 2. カードのフィルタリング
+            const cards = document.querySelectorAll('.image-card[data-mode]');
+            const noData = document.getElementById('no-data');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                card.style.display = 'none';
+                card.classList.remove('fade-in');
+
+                if (mode === 'all' || card.getAttribute('data-mode') === mode) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                    setTimeout(() => {
+                        card.classList.add('fade-in');
+                    }, 10);
+                }
+            });
+
+            // 表示するものが一つもない場合の処理
+            if (visibleCount === 0) {
+                noData.classList.remove('hidden');
+            } else {
+                noData.classList.add('hidden');
+            }
+        }
+    </script>
+
     <footer class="bg-black border-t border-white/5 py-16 mt-20">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-xl font-serif gold-gradient mb-6 tracking-widest">役満コレクション</h2>
-            <p class="text-[10px] text-gray-700 tracking-tighter uppercase">© 2026 YAKUMAN ARCHIVE.</p>
+            <h2 class="text-xl font-serif gold-gradient mb-4 tracking-widest">役満コレクション</h2>
+            <p class="text-[10px] text-gray-700 tracking-tighter uppercase">© 2026 YAKUMAN COLLECTION</p>
         </div>
     </footer>
 
