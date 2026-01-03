@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>役満コレクション | 雀魂の記憶</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #0f0f0f;
+            color: #e0e0e0;
+            scroll-behavior: smooth;
+        }
+        .font-serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f9f295 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-crimson {
+            background-color: #8c0000;
+        }
+        .category-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .category-card:hover {
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-2px);
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+        .bg-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.03) 1px, transparent 0);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="bg-pattern">
+
+    <!-- Navigation -->
+    <header class="border-b border-white/10 sticky top-0 bg-black/90 backdrop-blur-md z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-serif font-bold gold-gradient tracking-widest">役満コレクション</h1>
+            <nav class="hidden md:flex space-x-8 items-center text-sm">
+                <a href="#" class="hover:text-yellow-500 transition-colors">ホーム</a>
+                <a href="#single" class="text-gray-400 hover:text-white transition-colors">シングル</a>
+                <a href="#double" class="text-gray-400 hover:text-white transition-colors">ダブル</a>
+                <a href="#complex" class="text-gray-400 hover:text-white transition-colors">複合</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        
+        <!-- Header Section -->
+        <div class="flex flex-col items-center mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 tracking-[0.2em]">役満図鑑</h2>
+            <div class="h-[2px] w-24 bg-yellow-600 mb-6"></div>
+            <p class="text-gray-500 text-sm tracking-widest uppercase">The Archive of Supreme Hands</p>
+        </div>
+
+        <!-- 1. Single Yakuman -->
+        <section id="single" class="mb-24">
+            <div class="flex items-center gap-4 mb-10">
+                <h3 class="text-xl font-serif text-white tracking-widest">シングル役満</h3>
+                <span class="text-[10px] text-gray-500 border border-white/20 px-2 py-0.5 rounded">STANDARD</span>
+                <div class="flex-grow section-divider ml-4"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <a href="kokushi_musou.html" class="category-card p-8 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">国士無双</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">四暗刻</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">大三元</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">緑一色</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">字一色</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">清老頭</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">九蓮宝燈</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">小四喜</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Double Yakuman -->
+        <section id="double" class="mb-24">
+            <div class="flex items-center gap-4 mb-10">
+                <h3 class="text-xl font-serif text-white tracking-widest">ダブル役満</h3>
+                <span class="text-[10px] text-yellow-600 border border-yellow-600/50 px-2 py-0.5 rounded">HIGHER</span>
+                <div class="flex-grow section-divider ml-4"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <a href="#" class="category-card p-8 rounded-lg group text-center border-yellow-900/30">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">国士無双十三面</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center border-yellow-900/30">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">四暗刻単騎</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center border-yellow-900/30">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">純正九蓮宝燈</div>
+                </a>
+                <a href="#" class="category-card p-8 rounded-lg group text-center border-yellow-900/30">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">大四喜</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. Complex Yakuman -->
+        <section id="complex" class="mb-24">
+            <div class="flex items-center gap-4 mb-10">
+                <h3 class="text-xl font-serif text-white tracking-widest">複合役満</h3>
+                <span class="text-[10px] text-red-500 border border-red-500/50 px-2 py-0.5 rounded">MULTIPLE</span>
+                <div class="flex-grow section-divider ml-4"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="shousuushi_tsuiisou.html" class="category-card p-10 rounded-lg group text-center relative overflow-hidden">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">
+                        小四喜 <span class="text-sm text-gray-500 mx-1">×</span> 字一色
+                    </div>
+                    <div class="text-[9px] text-gray-500 mt-2 tracking-widest uppercase italic">Double Yakuman</div>
+                </a>
+                <a href="#" class="category-card p-10 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">
+                        大三元 <span class="text-sm text-gray-500 mx-1">×</span> 字一色
+                    </div>
+                    <div class="text-[9px] text-gray-500 mt-2 tracking-widest uppercase italic">Double Yakuman</div>
+                </a>
+                <a href="#" class="category-card p-10 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">
+                        四暗刻 <span class="text-sm text-gray-500 mx-1">×</span> 字一色
+                    </div>
+                    <div class="text-[9px] text-gray-500 mt-2 tracking-widest uppercase italic">Double Yakuman</div>
+                </a>
+                <a href="#" class="category-card p-10 rounded-lg group text-center bg-gradient-to-b from-transparent to-red-900/5">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">
+                        大四喜 <span class="text-sm text-gray-500 mx-1">×</span> 字一色
+                    </div>
+                    <div class="text-[9px] text-red-700 mt-2 tracking-widest uppercase italic font-bold">Triple Yakuman</div>
+                </a>
+                <a href="#" class="category-card p-10 rounded-lg group text-center">
+                    <div class="text-lg font-serif group-hover:text-yellow-400 transition-colors">
+                        清老頭 <span class="text-sm text-gray-500 mx-1">×</span> 四暗刻
+                    </div>
+                    <div class="text-[9px] text-gray-500 mt-2 tracking-widest uppercase italic">Double Yakuman</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/5 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-xl font-serif gold-gradient mb-4 tracking-widest">役満コレクション</h2>
+            <p class="text-[10px] text-gray-700 tracking-tighter uppercase">© 2024 YAKUMAN ARCHIVE. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
